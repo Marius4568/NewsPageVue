@@ -48,8 +48,8 @@ export default {
 
   methods: {
     markOverflownContent() { 
-      const elHeight = this.$refs.infoBox.clientHeight;
-      const elWidth = this.$refs.infoBox.clientWidth;
+
+
       const isOverflown = this.$refs.infoBox.scrollHeight > this.$refs.infoBox.clientHeight;
 
 
@@ -64,11 +64,16 @@ export default {
 
   mounted() { 
    this.markOverflownContent()
-  
+  window.addEventListener('resize', this.markOverflownContent);
+     
   },
 
   updated() { 
     this.markOverflownContent()
+  },
+
+  unmounted() { 
+    window.removeEventListener('resize', this.markOverflownContent);
   }
 
 
