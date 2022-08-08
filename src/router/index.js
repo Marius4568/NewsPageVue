@@ -30,9 +30,6 @@ const router = createRouter({
         {
           path: ":category",
           name: "news-page-category",
-          afterEnter: (to, from) => {
-     console.log('entered')
-    },
           component: LatestNews,
         },
       ],

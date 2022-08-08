@@ -1,6 +1,6 @@
 <template>
   <header>
-  <burger-menu></burger-menu>
+    <burger-menu></burger-menu>
     <nav>
       <router-link to="/home">Home</router-link>
       <router-link to="/news-page">Latest News</router-link>
@@ -17,16 +17,16 @@ import ThemeToggle from "../ThemeToggle.vue";
 export default {
   components: {
     BurgerMenu,
-ThemeToggle
-  }
+    ThemeToggle,
+  },
 };
 </script>
 
 <style scoped>
 header {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 header > * {
@@ -38,43 +38,34 @@ header > div:nth-child(1) {
 }
 
 nav {
-  width: 100%;
-  text-align: center;
-  padding: 2rem 0;
   display: flex;
   flex-direction: column;
-
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
 }
 
 nav a.router-link-active {
- color: var(--brick-brown-color)
-}
-
-nav a.router-link-active:hover {
-  background-color: transparent;
+  color: var(--brick-brown-color);
 }
 
 nav a {
   display: inline-block;
 }
 
-nav a:first-of-type {
-  border: 0;
-}
-
 .contact-us {
-    display: none
-  }
-
-  @media(min-width: 600px) {
- nav {
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 2rem 2rem;
- }
+  display: none;
 }
 
-@media(min-width: 900px) {
+@media (min-width: 600px) {
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 900px) {
   .contact-us {
     display: block;
     white-space: nowrap;
@@ -82,16 +73,12 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
-
-
-
   nav {
     justify-content: flex-start;
   }
 
-    nav a {
+  nav a {
     margin-right: 2rem;
   }
-
 }
 </style>

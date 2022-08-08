@@ -1,20 +1,18 @@
 <template>
-  <article @click="logRef" ref="infoBox">
+  <article ref="infoBox">
     <img :src="imgSource" alt="title" />
     <div class="content">
-    <h1>{{ title }}</h1>
-    <p>{{ description }}</p>
-    <p>{{ date }}</p>
-    <div class="author">
-    <img :src="author.image" alt="author-photo" />
-    <div class="author-text">
-     <p>{{ author.name }}</p>
-      <p>{{ author.occupation }}</p>
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
+      <p>{{ date }}</p>
+      <div class="author">
+        <img :src="author.image" alt="author-photo" />
+        <div class="author-text">
+          <p>{{ author.name }}</p>
+          <p>{{ author.occupation }}</p>
+        </div>
+      </div>
     </div>
-     
-    </div>
-    </div>
-    
   </article>
 </template>
 
@@ -44,98 +42,101 @@ export default {
     },
   },
 
-
-
   methods: {
-    markOverflownContent() { 
+    markOverflownContent() {
+      const isOverflown =
+        this.$refs.infoBox.scrollHeight > this.$refs.infoBox.clientHeight;
 
-
-      const isOverflown = this.$refs.infoBox.scrollHeight > this.$refs.infoBox.clientHeight;
-
-
-    this.$refs.infoBox.classList.remove('article-overflown');
+      this.$refs.infoBox.classList.remove("article-overflown");
       if (isOverflown) {
-        this.$refs.infoBox.classList.add('article-overflown');
+        this.$refs.infoBox.classList.add("article-overflown");
       }
-
-
-    }
+    },
   },
 
-  mounted() { 
-   this.markOverflownContent()
-  window.addEventListener('resize', this.markOverflownContent);
-     
+  mounted() {
+    this.markOverflownContent();
+    window.addEventListener("resize", this.markOverflownContent);
   },
 
-  updated() { 
-    this.markOverflownContent()
+  updated() {
+    this.markOverflownContent();
   },
 
-  unmounted() { 
-    window.removeEventListener('resize', this.markOverflownContent);
-  }
-
-
-
-
+  unmounted() {
+    window.removeEventListener("resize", this.markOverflownContent);
+  },
 };
 </script>
 
 <style scoped>
-
-h1 {
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
   text-align: left;
 }
 
 article {
-min-height: 20rem;
-
-
+  min-height: 20rem;
   overflow: hidden;
-
-  position: relative; 
-
+  position: relative;
 }
 
+article > img {
+  height: 40%;
+  object-fit: cover;
+  width: 100%;
+}
 
+.article-overflown {
+  position: relative;
+}
 
+.article-overflown::before {
+  align-items: flex-end;
+  background: linear-gradient(
+    0deg,
+    var(--color-foreground) 25%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  bottom: 0;
+  color: var(--text-color);
+  content: "Read more";
+  cursor: pointer;
+  display: flex;
+  font-weight: 500;
+  height: 30%;
+  justify-content: center;
+  padding-bottom: 1rem;
+  position: absolute;
+  width: 100%;
+}
 
 .content {
-padding: 1rem;
-
+  padding: 1rem;
 }
 
 .author img {
   border-radius: 50%;
-  width: 3.5rem;
   height: 3.5rem;
-  object-fit: cover;
   margin-right: 2rem;
+  object-fit: cover;
+  width: 3.5rem;
 }
 
 .author {
+  align-items: center;
+  display: flex;
+  height: 20%;
   margin-top: 2rem;
-display: flex;
-align-items: center;
-height: 20%;
 }
 
 .author-text p:nth-child(1) {
   font-weight: 500;
 }
 .author-text p:nth-child(2) {
-  font-size: 0.8rem;
   color: var(--dark-gray-color);
+  font-size: 0.8rem;
 }
-
-article > img {
-
-  height: 30%;
-  width: 100%;
-  object-fit: cover;
-
-}
-
-
 </style>

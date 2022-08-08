@@ -1,0 +1,48 @@
+Date : 2022-08-08 10:39:35
+Directory : c:\Users\LINAS\Desktop\NewsPageVue\src
+Total : 17 files,  1699 codes, 2 comments, 182 blanks, all 1883 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |          3 |        855 |          0 |         18 |        873 |
+| Vue        |         12 |        767 |          2 |        141 |        910 |
+| CSS        |          2 |         77 |          0 |         23 |        100 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                   | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                      |         17 |      1,699 |          2 |        182 |      1,883 |
+| assets                                                                 |          2 |         77 |          0 |         23 |        100 |
+| components                                                             |          7 |        702 |          0 |        118 |        820 |
+| components\layout                                                      |          1 |         72 |          0 |         13 |         85 |
+| pages                                                                  |          4 |         49 |          2 |         16 |         67 |
+| router                                                                 |          1 |         55 |          0 |          8 |         63 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                               | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\LINAS\Desktop\NewsPageVue\src\App.vue                         | Vue        |         16 |          0 |          7 |         23 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\assets\base.css                 | CSS        |         38 |          0 |         16 |         54 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\assets\main.css                 | CSS        |         39 |          0 |          7 |         46 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\BurgerMenu.vue       | Vue        |         29 |          0 |          4 |         33 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\ContentContainer.vue | Vue        |         76 |          0 |          9 |         85 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\LatestNews.vue       | Vue        |        298 |          0 |         60 |        358 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\NewsArticle.vue      | Vue        |        124 |          0 |         19 |        143 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\NewsCategories.vue   | Vue        |         48 |          0 |          6 |         54 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\ThemeToggle.vue      | Vue        |         55 |          0 |          7 |         62 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\components\layout\TheHeader.vue | Vue        |         72 |          0 |         13 |         85 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\data.js                         | JavaScript |        793 |          0 |          4 |        797 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\main.js                         | JavaScript |          7 |          0 |          6 |         13 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\pages\HomePage.vue              | Vue        |          5 |          0 |          4 |          9 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\pages\NewsPage.vue              | Vue        |         33 |          2 |          7 |         42 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\pages\NotFound.vue              | Vue        |          7 |          0 |          3 |         10 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\pages\ReviewsPage.vue           | Vue        |          4 |          0 |          2 |          6 |
+| c:\Users\LINAS\Desktop\NewsPageVue\src\router\index.js                 | JavaScript |         55 |          0 |          8 |         63 |
+| Total                                                                  |            |      1,699 |          2 |        182 |      1,883 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+

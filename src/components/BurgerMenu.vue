@@ -1,39 +1,32 @@
 <template>
   <div>
-  <span></span>
-  <span></span>
-  <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 </template>
 
-<script>
-export default {
-
-}
-</script>
-
 <style scoped>
 div {
-    height: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 1rem;
+  justify-content: space-between;
 }
 div span {
-    display: block;
-    background-color: var(--color-text);
-    height: 0.15rem;
-    width: 1.5rem;
-    transition: background-color 0.5s;
+  background-color: var(--color-text);
+  display: block;
+  height: 0.15rem;
+  transition: background-color 0.5s;
+  width: 1.5rem;
 }
 
 div span:nth-child(2) {
-    width: 1rem;
+  width: 1rem;
 }
 
 .dark-mode div span {
-    transition: background-color 0.5s;
+  transition: background-color 0.5s;
 }
-
 </style>
