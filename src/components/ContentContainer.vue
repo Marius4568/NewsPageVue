@@ -21,20 +21,18 @@ export default {
 .content-container {
  
     position: relative;
-  background-color: var(--main-light-color);
+  background-color: var(--color-foreground);
+  color: var(--color-text);
 transform: translateX(0);
   border-radius: 2rem;
   padding: 2rem 2rem;
-transition: color background-color 0.5s;
+transition: all 0.5s;
   width: 100%;
 
   overflow: hidden;
 }
 
-.darkmode .content-container{
 
- transition: color background-color 0.5s;
-}
 
 .dark-overlay {
   position: absolute;
@@ -49,7 +47,7 @@ transition: color background-color 0.5s;
 
 .darkmode .dark-overlay {
   width: 100%;
-  transition: width 0.5s;
+  
 }
 
 .content-container:before {

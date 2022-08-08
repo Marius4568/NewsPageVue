@@ -62,22 +62,7 @@
   --corner-opacity: 40%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  --color-background: var(--dark-brown-color);
 
-  --color-foreground: var(--main-dark-color);
-
-  --color-heading: var(--text-dark);
-
-  --color-text: var(--text-dark);
-
---corner-top-color: var(--pink-color);
-    --corner-bottom-color: var(--orange-color);
-  --corner-opacity: 40%;
-
-  }
-}
 
 *,
 *::before,

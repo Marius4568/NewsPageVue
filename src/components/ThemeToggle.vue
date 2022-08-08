@@ -1,9 +1,11 @@
 <template>
-  <input @click="toggleTheme" type='checkbox'/>
+  <input id="theme-toggle" @click="toggleTheme" type='checkbox'/>
 </template>
 
 <script>
 export default {
+
+
     methods: {
         toggleTheme() {
             const body = document.querySelector('body');
