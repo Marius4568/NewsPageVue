@@ -4,7 +4,7 @@
     <div class="content">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
-      <p>{{ date }}</p>
+      <p class="article-date">{{ date }}</p>
       <div class="author">
         <img :src="author.image" alt="author-photo" />
         <div class="author-text">
@@ -87,6 +87,13 @@ article > img {
   height: 40%;
   object-fit: cover;
   width: 100%;
+}
+
+.article-date {
+  color: var(--dark-gray-color);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  text-align: left;
 }
 
 .article-overflown {
