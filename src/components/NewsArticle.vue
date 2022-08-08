@@ -1,6 +1,6 @@
 <template>
   <article ref="infoBox">
-    <img :src="imgSource" alt="title" />
+    <img class="article-img" :src="imgSource" alt="title" />
     <div class="content">
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>

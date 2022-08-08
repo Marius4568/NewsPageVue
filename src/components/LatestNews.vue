@@ -1,41 +1,49 @@
 <template>
-  <div class="articles-main" :class="computedGridClass">
-    <div class="number-of-the-day-wrap">
-      <p class="numOTDTitle">Number of the day</p>
-      <p class="numOTDNumber">$18,000</p>
-      <p class="numOTDDescription">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, id
-        delectus odit porro ratione ab! Magnam nesciunt ipsa voluptas id.
-      </p>
-    </div>
-    <news-article
-      v-for="(article, i) in articles.slice(0, 4)"
-      :key="article.id"
-      :imgSource="article.imgSource"
-      :title="article.title"
-      :description="article.description"
-      :date="article.date"
-      :author="article.author"
-      :class="setItemClass(i)"
-    />
-  </div>
+  <div>
+    <h1 class="latest-news-title">Latest news</h1>
+    <news-categories class="news-categories"></news-categories>
 
-  <div class="articles-rest">
-    <news-article
-      v-for="article in articles.slice(4, 14)"
-      :key="article.id"
-      :imgSource="article.imgSource"
-      :title="article.title"
-      :description="article.description"
-      :date="article.date"
-      :author="article.author"
-    />
+    <div class="articles-main" :class="computedGridClass">
+      <div class="number-of-the-day-wrap main-news-item">
+        <p class="numOTDTitle">Number of the day</p>
+        <p class="numOTDNumber">$18,000</p>
+        <p class="numOTDDescription">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates,
+          id delectus odit porro ratione ab! Magnam nesciunt ipsa voluptas id.
+        </p>
+      </div>
+      <news-article
+        v-for="(article, i) in articles.slice(0, 4)"
+        :key="article.id"
+        :imgSource="article.imgSource"
+        :title="article.title"
+        :description="article.description"
+        :date="article.date"
+        :author="article.author"
+        :class="setItemClass(i)"
+        class="main-news-item"
+      />
+    </div>
+
+    <div key="rest-articles-transition" class="articles-rest">
+      <news-article
+        v-for="article in articles.slice(4, 14)"
+        :key="article.id"
+        :imgSource="article.imgSource"
+        :title="article.title"
+        :description="article.description"
+        :date="article.date"
+        :author="article.author"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import NewsArticle from "./NewsArticle.vue";
+import NewsCategories from "../components/NewsCategories.vue";
 import { articles } from "../data.js";
+import gsap from "gsap";
 
 export default {
   props: {
@@ -46,6 +54,7 @@ export default {
 
   components: {
     NewsArticle,
+    NewsCategories,
   },
 
   data() {
@@ -92,6 +101,53 @@ export default {
     this.setArticles();
   },
 
+  mounted() {
+    const tl = gsap.timeline();
+
+    tl.set(".latest-news-title", { opacity: 0 });
+
+    tl.set(".main-news-item", {
+      opacity: 0,
+    });
+
+    tl.set(".main-news-item .article-img", {
+      opacity: 0,
+      scale: 1.1,
+    });
+
+    tl.set(".news-categories", {
+      opacity: 0,
+      x: -5,
+    });
+
+    tl.to(".latest-news-title", {
+      delay: 0.2,
+      opacity: 1,
+      duration: 2,
+    });
+
+    tl.to(".news-categories", {
+      delay: -1.8,
+      duration: 1,
+      opacity: 1,
+      x: 0,
+    });
+
+    tl.to(".main-news-item", {
+      delay: -1.4,
+      duration: 0.5,
+      opacity: 1,
+    });
+
+    tl.to(".main-news-item .article-img", {
+      delay: -1.4,
+      duration: 1,
+      opacity: 1,
+      scale: 1,
+      stagger: 0.2,
+    });
+  },
+
   beforeUpdate() {
     this.setArticles();
   },
@@ -99,6 +155,12 @@ export default {
 </script>
 
 <style scoped>
+.latest-news-title {
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+  font-size: 2rem;
+}
+
 .articles-main {
   display: grid;
   gap: 2rem;
@@ -157,6 +219,10 @@ export default {
 }
 
 @media (min-width: 700px) {
+  .latest-news-title {
+    text-align: left;
+    font-size: 2.5rem;
+  }
   .grid-item-1 {
     grid-area: item-1;
   }

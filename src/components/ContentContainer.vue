@@ -12,6 +12,7 @@
   background-color: var(--color-foreground);
   border-radius: 2rem;
   color: var(--color-text);
+  overflow: hidden;
   padding: 2rem 2rem;
   position: relative;
   transform: translateX(0);

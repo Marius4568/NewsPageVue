@@ -40,13 +40,14 @@ export default {
 
 a {
   border-radius: 1rem;
-  border: 1px solid var(--color-text);
+  border: 1.5px solid var(--color-text);
   margin: 1rem 0.75rem 0 0;
   padding: 0.1rem 0.75rem;
+  font-size: 0.9rem;
 }
 
 .active {
-  border: 1px solid var(--brick-brown-color);
+  border: 1.5px solid var(--brick-brown-color);
   color: var(--brick-brown-color);
 }
 
